@@ -20,3 +20,9 @@ $obRouter->get('/pagina/{idPagina}',[
         return new Response(200, "Página " . $idPagina);
     }
 ]);
+
+$obRouter->get('/depoimento',[
+    function(){
+        return new Response(200, Pages\Testimony::getTestimonies());
+    }
+]);

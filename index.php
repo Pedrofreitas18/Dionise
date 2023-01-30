@@ -5,7 +5,8 @@ use \App\Http\Router;
 use \App\Http\Response;
 use \App\Utils\View;
 
-define('URL', 'http://localhost/Dionise');
+require_once 'global.php';
+define('URL', getenv('URL'));
 
 View::init([
     'URL' => URL
