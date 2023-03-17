@@ -2,8 +2,21 @@
 use \App\Controller\Pages;
 use \App\Http\Response;
 
+/*
+$obRouter->get('/',[
+    'middlewares' => [
+        'maintenance'
+    ],
+    function(){
+        return new Response(200, Pages\Home::getHome());
+    }
+]);
+*/
 
 $obRouter->get('/',[
+    'middlewares' => [
+        'maintenance'
+    ],
     function(){
         return new Response(200, Pages\Home::getHome());
     }
@@ -22,7 +35,14 @@ $obRouter->get('/pagina/{idPagina}',[
 ]);
 
 $obRouter->get('/depoimento',[
-    function(){
-        return new Response(200, Pages\Testimony::getTestimonies());
+    function($request){
+        return new Response(200, Pages\Testimony::getTestimonies($request));
+    }
+]);
+ 
+
+$obRouter->post('/depoimento',[
+    function($request){
+        return new Response(200, Pages\Testimony::insertTestimony($request));
     }
 ]);

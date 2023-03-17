@@ -4,6 +4,7 @@ namespace App\Http;
 use \Closure;
 use \Exception;
 use \ReflectionFunction;
+use \App\Http\Middleware\Queue as MiddlewareQueue;
 
 class Router{
     private $url = '';
@@ -12,7 +13,7 @@ class Router{
     private $request;
 
     public function __construct($url){
-        $this->request = new Request();
+        $this->request = new Request($this);
         $this->url = $url;
         $this->setPrefix();
     }
@@ -43,6 +44,9 @@ class Router{
             }
         }
 
+        $params['middlewares'] = $params['middlewares'] ?? [];
+
+
         $params['variables'] = [];
 
         $patternVariable = '/{(.*?)}/';
@@ -57,7 +61,7 @@ class Router{
 
     public function run(){
         try{
-           
+            
            $route = $this->getRoute();
            if(!isset($route['controller'])){
                 throw new Exception("URL could not be precessed", 500);
@@ -68,7 +72,9 @@ class Router{
             $name = $parameter->getName();
             $args[$name] = $route['variables'][$name] ?? '';
            }
-           return call_user_func_array($route['controller'], $args);
+         
+           return (new MiddlewareQueue($route['middlewares'], $route['controller'], $args))->next($this->request);
+           //return call_user_func_array($route['controller'], $args);
         }catch(Exception $e){
             return new Response($e->getCode(), $e->getMessage());
         }
