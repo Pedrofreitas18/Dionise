@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller\Pages;
 
-use \App\Utils\View;
+use \App\View\View;
 
 class Page{
     private static function getHeader(){
@@ -13,7 +13,6 @@ class Page{
     }
 
     public static function getPage($title, $content){
-        //return 'bob';
         return View::render('pages/page', [
             'title' => $title,
             'header' => self::getHeader(),

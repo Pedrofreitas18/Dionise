@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Utils;
+namespace App\View;
 
 class View{
 
     private static $vars = [];
 
     private static function getContentView($view){
-        $file = __DIR__.'/../../resources/view/'.$view.'.html';
+        $file = __DIR__ ."/".$view.'.html';
+
         return file_exists($file) ? file_get_contents($file) : '';
     }
     

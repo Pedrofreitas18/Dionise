@@ -1,14 +1,14 @@
 <?php
 namespace App\Controller\Pages;
 
-use \App\Utils\View;
+use \App\View\View;
 use \App\Model\Entity\Organization;
 use \App\Model\Entity\Testimony as EntityTestimony;
 
 class Testimony extends Page{
     
     public static function getTestimonies($request){
-        $content =  View::render('pages/testimonies', [
+        $content =  View::render('pages/Testimony/testimonies', [
             'itens' => self::getTestimonyItens($request)
         ]);
 
@@ -22,7 +22,7 @@ class Testimony extends Page{
         $obTestimony->nome = $postVars['nome'];
         $obTestimony->mensagem = $postVars['mensagem'];
         $obTestimony->cadastrar();
-        return self::getTestimonies();
+        return self::getTestimonies($request);
     }
 
     private static function getTestimonyItens($request){

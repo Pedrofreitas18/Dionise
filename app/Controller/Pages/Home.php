@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller\Pages;
 
-use \App\Utils\View;
+use \App\View\View;
 use \App\Model\Entity\Organization;
 
 class Home extends Page{
