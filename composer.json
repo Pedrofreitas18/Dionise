@@ -6,6 +6,8 @@
         }
     },
     "require": {
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "php": "^7.2",
+        "ext-pdo": "*"
     }
 }

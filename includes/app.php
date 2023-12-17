@@ -27,3 +27,4 @@ MiddlewareQueue::setMap([
 MiddlewareQueue::setDefault([
     'maintenance'
 ]);
+ 

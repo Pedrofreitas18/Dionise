@@ -3,7 +3,7 @@
         'name' => 'projeto/dionise',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'a2494bf40303b21bd694912fc3ec7248ae2f0b53',
+        'reference' => 'f4a592538c24276b6ed5c439c8fbfbda895eba42',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'projeto/dionise' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a2494bf40303b21bd694912fc3ec7248ae2f0b53',
+            'reference' => 'f4a592538c24276b6ed5c439c8fbfbda895eba42',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -14,8 +14,8 @@ $obRouter->get('/',[
 */
 
 $obRouter->get('/',[
-    function(){
-        return new Response(200, Pages\Home::getHome());
+    function($request){
+        return new Response(200, Pages\Home::getHome($request));
     }
 ]);
 
@@ -28,6 +28,12 @@ $obRouter->get('/about',[
 $obRouter->get('/pagina/{idPagina}',[
     function($idPagina){
         return new Response(200, "Página " . $idPagina);
+    }
+]);
+
+$obRouter->get('/Establishment/{id}',[
+    function($id){
+        return new Response(200,  Pages\Establishment::getEstablishment($id));
     }
 ]);
 
