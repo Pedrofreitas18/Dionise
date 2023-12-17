@@ -9,7 +9,7 @@ class About extends Page{
     public static function getAbout(){
         $obOrganization = new Organization;
         
-        $content =  View::render('pages/about', [
+        $content =  View::render('pages/About/AboutPage', [
             'name' => $obOrganization->name,
             'description' => $obOrganization->description
         ]);

@@ -5,15 +5,15 @@ use \App\View\View;
 
 class Page{
     private static function getHeader(){
-        return View::render('pages/header');
+        return View::render('template/header');
     }
 
     private static function getFooter(){
-        return View::render('pages/footer');
+        return View::render('template/footer');
     }
 
     public static function getPage($title, $content){
-        return View::render('pages/page', [
+        return View::render('template/page', [
             'title' => $title,
             'header' => self::getHeader(),
             'footer' => self::getFooter(),

@@ -11,7 +11,7 @@ class Establishment extends Page{
     public static function getEstablishment($id){
         $obEstablishment = EntityEstablishment::getById($id);
 
-        $content =  View::render('pages/Establishment/establishment', [
+        $content =  View::render('pages/Establishment/EstablishmentPage', [
             //'id'             => $obEstablishment->id,
             'name'           => $obEstablishment->name,
             'description'    => $obEstablishment->description,
@@ -29,7 +29,7 @@ class Establishment extends Page{
         $itens = EntityEstablishmentInfo::getEstablishmentInfos($establishmentId);
 
         foreach ($itens as &$item) {
-            $content .=  View::render('pages/Establishment/info', [
+            $content .=  View::render('pages/Establishment/Info', [
                 'id'       => $item->id,
                 'sequence' => $item->sequence,
                 'title'    => $item->title,

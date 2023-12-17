@@ -8,7 +8,7 @@ class Home extends Page{
     
     public static function getHome($request)
     {
-        $content =  View::render('pages/Home/home', [
+        $content =  View::render('pages/Home/HomePage', [
             'itens' => self::getEstablishments($request)
         ]);
 
@@ -21,7 +21,7 @@ class Home extends Page{
         $itens = Establishment::getTodaysHighlights();
 
         foreach ($itens as &$item) {
-            $content .=  View::render('pages/Home/item', [
+            $content .=  View::render('pages/Home/Item', [
                 'id'             => $item->id,
                 'name'           => $item->name,
                 'description'    => $item->description,
