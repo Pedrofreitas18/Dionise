@@ -1,10 +1,14 @@
 <?php
-namespace App\Http;
+namespace Http;
 
+require __DIR__.'/Request.php';
+//require __DIR__.'/Middleware/Queue.php';
+
+use \Http\Request;
 use \Closure;
 use \Exception;
 use \ReflectionFunction;
-use \App\Http\Middleware\Queue as MiddlewareQueue;
+use \Http\Middleware\Queue as MiddlewareQueue;
 
 class Router{
     private $url = '';
@@ -72,9 +76,9 @@ class Router{
             $name = $parameter->getName();
             $args[$name] = $route['variables'][$name] ?? '';
            }
-         
-           return (new MiddlewareQueue($route['middlewares'], $route['controller'], $args))->next($this->request);
-           //return call_user_func_array($route['controller'], $args);
+
+           return call_user_func_array($route['controller'], $args);
+           
         }catch(Exception $e){
             return new Response($e->getCode(), $e->getMessage());
         }

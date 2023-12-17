@@ -1,6 +1,8 @@
 <?php
+require __DIR__.'/../../../http/Response.php';
+
 use \App\Controller\Pages;
-use \App\Http\Response;
+use \Http\Response;
 
 /*
 $obRouter->get('/',[

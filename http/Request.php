@@ -1,5 +1,5 @@
 <?php
-namespace App\Http;
+namespace Http;
 
 class Request{
     private $router;

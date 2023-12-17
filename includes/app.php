@@ -4,7 +4,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 use \App\View\View;
 use \App\Model\DBConnection\Database;
-use \App\Http\Middleware\Queue as MiddlewareQueue;
+use \Http\Middleware\Queue as MiddlewareQueue;
 
 require_once 'global.php';
 define('URL', getenv('URL'));
@@ -19,12 +19,3 @@ Database::config(
     getenv('DB_HOST'),
     getenv('DB_NAME')
 );
-
-MiddlewareQueue::setMap([
-    'maintenance' => \App\Http\Middleware\Maintenance::class
-]);
-
-MiddlewareQueue::setDefault([
-    'maintenance'
-]);
- 
