@@ -1,9 +1,8 @@
 <?php 
 
-require __DIR__.'/http/Router.php';
 require __DIR__.'/includes/app.php';
 
-use \Http\Router;
+use App\Controller\Http\Router;
 
 $obRouter = new Router(URL);
 

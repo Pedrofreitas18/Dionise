@@ -2,16 +2,15 @@
 namespace App\Controller\Pages;
 
 use \App\View\View;
+use \App\Controller\Http\HttpCodes;
 
 class ErroHttp extends Page{
     
     public static function getErroHttp($code){
-        $message = 'batata';
-
         $content =  View::render('pages/Erro/ErroPage', [
             'code'    => $code,
-            'message' => $message
+            'message' => HttpCodes::getMessage($code)
         ]);
-        return parent::getPage('Erro '. $code, 'Default', $content);
+        return parent::getPage('Error '. $code, 'Default', $content);
     }
 }

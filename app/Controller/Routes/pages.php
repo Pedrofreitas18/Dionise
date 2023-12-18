@@ -1,8 +1,7 @@
 <?php
-require __DIR__.'/../../../http/Response.php';
 
 use \App\Controller\Pages;
-use \Http\Response;
+use \App\Controller\Http\Response;
 
 $obRouter->get('/',[
     function(){
@@ -32,5 +31,11 @@ $obRouter->get('/Establishment/{id}',[
 $obRouter->get('/404',[
     function(){
         return new Response(200,  Pages\ErroHttp::getErroHttp(404));
+    }
+]);
+
+$obRouter->get('/405',[
+    function(){
+        return new Response(200,  Pages\ErroHttp::getErroHttp(405));
     }
 ]);

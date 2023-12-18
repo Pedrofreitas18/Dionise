@@ -1,9 +1,6 @@
 <?php
-namespace Http;
+namespace App\Controller\Http;
 
-require __DIR__.'/Request.php';
-
-use \Http\Request;
 use \Closure;
 use \Exception;
 use \ReflectionFunction;
@@ -98,6 +95,8 @@ class Router{
                     return $methods[$httpMethod];
                 }
                 throw new Exception("Method not allow", 405);
+                header("Location: ".URL."/405");
+                exit();
             }
         }
 
