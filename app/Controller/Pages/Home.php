@@ -14,7 +14,7 @@ class Home extends Page{
             'navPage' => self::getPageNavigator($currentPage)
         ]);
 
-        return parent::getPage('Dionise - Home', $content);
+        return parent::getPage('Dionise - Home', 'Default', $content);
     }
 
     private static function getEstablishments($currentPage)
@@ -64,6 +64,7 @@ class Home extends Page{
         for ($i = $init; $i <= $final; $i++) {
             $content .=  View::render('pages/Home/NavPageItem', [
                 'number' => $i,
+                'link'   => $i == $currentPage ? "#" : URL.'/page/'.$i,
                 'class'  => $i == $currentPage ? "page-item active" : "page-item"
             ]);
         }

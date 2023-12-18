@@ -12,7 +12,6 @@ class Establishment extends Page{
         $obEstablishment = EntityEstablishment::getById($id);
 
         $content =  View::render('pages/Establishment/EstablishmentPage', [
-            //'id'             => $obEstablishment->id,
             'name'           => $obEstablishment->name,
             'description'    => $obEstablishment->description,
             'introImageLink' => $obEstablishment->introImageLink,
@@ -20,7 +19,7 @@ class Establishment extends Page{
             'infos'          => self::getInfos($id)
         ]);
 
-        return parent::getPage('Dionise - Estabelecimento', $content);
+        return parent::getPage('Dionise - Estabelecimento', 'Default', $content);
     }
 
     private static function getInfos($establishmentId)
