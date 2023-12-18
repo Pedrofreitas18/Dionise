@@ -15,11 +15,21 @@ $obRouter->get('/',[
 ]);
 */
 
+
 $obRouter->get('/',[
-    function($request){
-        return new Response(200, Pages\Home::getHome($request));
+    function(){
+        return new Response(200, Pages\Home::getHome(1));
     }
 ]);
+
+
+
+$obRouter->get('/page/{currentPage}',[
+    function($currentPage){
+        return new Response(200, Pages\Home::getHome($currentPage));
+    }
+]);
+
 
 $obRouter->get('/about',[
     function(){
