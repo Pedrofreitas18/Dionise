@@ -4,9 +4,9 @@ namespace App\Controller\Pages;
 use \App\View\View;
 use \App\Controller\Http\HttpCodes;
 
-class ErroHttp extends Page{
+class Erro extends Page{
     
-    public static function getErroHttp($code){
+    public static function getErrorPage($code, $message){
         $content =  View::render('pages/Erro/ErroPage', [
             'code'    => $code,
             'message' => HttpCodes::getMessage($code)

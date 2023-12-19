@@ -4,7 +4,6 @@ require __DIR__.'/../vendor/autoload.php';
 
 use \App\View\View;
 use \App\Model\DBConnection\Database;
-use \Http\Middleware\Queue as MiddlewareQueue;
 
 require_once 'global.php';
 define('URL', getenv('URL'));

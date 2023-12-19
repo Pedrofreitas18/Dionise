@@ -4,7 +4,8 @@ namespace App\Controller\Http;
 use \Closure;
 use \Exception;
 use \ReflectionFunction;
-use \Http\Middleware\Queue as MiddlewareQueue;
+use \App\Controller\Http\HttpCodes;
+use \App\Controller\Pages\Erro;
 
 class Router{
     private $url = '';
@@ -44,9 +45,6 @@ class Router{
             }
         }
 
-        $params['middlewares'] = $params['middlewares'] ?? [];
-
-
         $params['variables'] = [];
 
         $patternVariable = '/{(.*?)}/';
@@ -62,21 +60,19 @@ class Router{
     public function run(){
         try{
             
-           $route = $this->getRoute();
-           if(!isset($route['controller'])){
-                throw new Exception("URL could not be precessed", 500);
-           }
-           $args = [];
-           $reflection = new ReflectionFunction($route['controller']);
-           foreach($reflection->getParameters() as $parameter){
-            $name = $parameter->getName();
-            $args[$name] = $route['variables'][$name] ?? '';
-           }
-
-           return call_user_func_array($route['controller'], $args);
+            $route = $this->getRoute();
+            if(!isset($route['controller'])) throw new Exception(HttpCodes::getMessage(500), 500);
            
+            $args = [];
+            $reflection = new ReflectionFunction($route['controller']);
+            foreach($reflection->getParameters() as $parameter){
+                $name = $parameter->getName();
+                $args[$name] = $route['variables'][$name] ?? '';
+            }
+            
+            return call_user_func_array($route['controller'], $args);
         }catch(Exception $e){
-            return new Response($e->getCode(), $e->getMessage());
+            return new Response($e->getCode(), Erro::getErrorPage($e->getCode(), $e->getMessage()));
         }
     }
 
@@ -94,14 +90,10 @@ class Router{
 
                     return $methods[$httpMethod];
                 }
-                throw new Exception("Method not allow", 405);
-                header("Location: ".URL."/405");
-                exit();
+                throw new Exception(HttpCodes::getMessage(405), 405);
             }
         }
-
-        header("Location: ".URL."/404");
-        exit();
+        throw new Exception(HttpCodes::getMessage(404), 404);
     }
 
     private function getUri(){

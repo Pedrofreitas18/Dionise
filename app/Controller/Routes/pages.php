@@ -27,15 +27,3 @@ $obRouter->get('/Establishment/{id}',[
         return new Response(200,  Pages\Establishment::getEstablishment($id));
     }
 ]);
-
-$obRouter->get('/404',[
-    function(){
-        return new Response(200,  Pages\ErroHttp::getErroHttp(404));
-    }
-]);
-
-$obRouter->get('/405',[
-    function(){
-        return new Response(200,  Pages\ErroHttp::getErroHttp(405));
-    }
-]);
