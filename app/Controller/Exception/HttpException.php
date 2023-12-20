@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller\Http;
+namespace App\Controller\Exception;
 
 use \Exception;
 

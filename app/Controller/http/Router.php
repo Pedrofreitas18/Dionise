@@ -2,15 +2,16 @@
 namespace App\Controller\Http;
 
 use \Closure;
-use \Exception;
 use \ReflectionFunction;
 
-use \App\Model\Code\HttpCode;
+use \App\Model\Enum\HttpCode;
 use \App\Controller\Pages\Error;
 use \App\Model\Log\LogRegister;
-
+use \App\Controller\Exception\HttpException;
 
 class Router{
+    const LOG_FILE_SET = 'routesLog';
+    
     private $url = '';
     private $prefix = '';
     private $routes = [];
@@ -64,7 +65,7 @@ class Router{
         try{
             
             $route = $this->getRoute();
-            if(!isset($route['controller'])) throw new HttpException($this->request->getUrl(), 500, 4);;
+            if(!isset($route['controller'])) throw new HttpException($this->request->getUrl(), 500, 4);
            
             $args = [];
             $reflection = new ReflectionFunction($route['controller']);
@@ -76,7 +77,7 @@ class Router{
             
             return call_user_func_array($route['controller'], $args);
         } catch (HttpException $e) {
-            LogRegister::newLogLine($e->getHttpCode(), $e->getSeverity(), $e->getMessage(), 'routesLog');
+            LogRegister::newLogLine($e->getHttpCode(), $e->getSeverity(), $e->getMessage(), LOG_FILE_SET);
             return new Response($e->getHttpCode(), Error::getHttpErrorPage($e->getHttpCode()));
         }
     }

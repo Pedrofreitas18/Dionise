@@ -1,8 +1,10 @@
 <?php
-namespace App\Model\Code;
+namespace App\Model\Enum;
 
-class LogType{
+class NotificationSeverity{
     private static $codesEnum  = [
+        '0' => 'Debug',
+
         '1' => 'Informational', //Description: Events that provide useful information but do not have an immediate impact on processes or services.
                                 //Examples: Informational logs, notifications of normal events.
         
@@ -21,8 +23,8 @@ class LogType{
 
     public static function getMessage($code){   
         return is_string($code) 
-            ? LogType::$codesEnum[$code]
-            : LogType::$codesEnum[strval($code)];
+            ? NotificationSeverity::$codesEnum[$code]
+            : NotificationSeverity::$codesEnum[strval($code)];
     }
 
 }

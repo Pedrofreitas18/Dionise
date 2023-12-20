@@ -1,9 +1,14 @@
 <?php
 namespace App\Model\Entity\Establishment;
 
+use \Exception;
 use \App\Model\DBConnection\Database;
+use \App\Model\Log\LogRegister;
 
 class Establishment{
+  const LOG_FILE_SET    = 'databaseLog';
+  const LOG_CODE_PREFIX = 'ET-10';
+
   public $id;
   public $name;
   public $introImageLink;
@@ -20,8 +25,13 @@ class Establishment{
         'idFinal' =>  $idFinal
       ));
     } catch (\throwable $th){
-      echo $th;  //precisa de tratamento de exception
-      die;
+      LogRegister::newLogLine(
+        Establishment::LOG_CODE_PREFIX .':01', 
+        4, 
+        'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
+        Establishment::LOG_FILE_SET
+      );
+      return null;
     }
 
     if (!$stmt->rowCount() > 0) return null;
@@ -41,15 +51,22 @@ class Establishment{
   }
 
   public static function getById($id){
+    $query = "SELECT * FROM Establishment WHERE id = :id LIMIT 1";
+    
     $pdo = Database::getPDO();
     try{
-      $stmt = $pdo->prepare("SELECT * FROM Establishment WHERE id = :id LIMIT 1");
+      $stmt = $pdo->prepare($query);
       $stmt->execute( array(
         'id' => $id
       ));
-    } catch (\throwable $th){
-      echo $th;  //precisa de tratamento de exception
-      die;
+    } catch (Exception $e){
+      LogRegister::newLogLine(
+        Establishment::LOG_CODE_PREFIX .':02', 
+        4, 
+        'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
+        Establishment::LOG_FILE_SET
+      );
+      return null;
     }
 
     if ($stmt->rowCount() != 1) return null;
@@ -66,13 +83,20 @@ class Establishment{
   }
 
   public static function getNumberOfEstablishments(){
+    $query = "SELECT COUNT(ID) as count FROM Establishment LIMIT 1";
+
     $pdo = Database::getPDO();
     try{
-      $stmt = $pdo->prepare("SELECT COUNT(ID) as count FROM Establishment LIMIT 1");
+      $stmt = $pdo->prepare($query);
       $stmt->execute();
-    } catch (\throwable $th){
-      echo $th;  //precisa de tratamento de exception
-      die;
+    } catch (Exception $e){
+      LogRegister::newLogLine(
+        Establishment::LOG_CODE_PREFIX .':03', 
+        4, 
+        'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
+        Establishment::LOG_FILE_SET
+      );
+      return null;
     }
 
     if ($stmt->rowCount() != 1) return null;

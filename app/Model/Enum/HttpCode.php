@@ -1,5 +1,5 @@
 <?php
-namespace App\Model\Code;
+namespace App\Model\Enum;
 
 class HttpCode{
     private static $codesEnum  = [

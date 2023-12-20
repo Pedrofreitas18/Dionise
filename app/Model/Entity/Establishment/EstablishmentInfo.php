@@ -2,8 +2,12 @@
 namespace App\Model\Entity\Establishment;
 
 use \App\Model\DBConnection\Database;
+use \App\Model\Log\LogRegister;
 
 class EstablishmentInfo{
+    const LOG_FILE_SET    = 'databaseLog';
+    const LOG_CODE_PREFIX = 'ET-11';
+
     public $id;
     public $sequence;
     public $title;
@@ -18,8 +22,13 @@ class EstablishmentInfo{
                 'establishment' => $establishmentId
             ));
         } catch (\throwable $th) {
-          echo $th; //precisa de tratamento de exception
-          die;
+            LogRegister::newLogLine(
+                EstablishmentInfo::LOG_CODE_PREFIX .':01', 
+                4, 
+                'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
+                EstablishmentInfo::LOG_FILE_SET
+              );
+            return null;
         }
 
         if (!$stmt->rowCount() > 0) return null;

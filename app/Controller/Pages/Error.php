@@ -2,7 +2,7 @@
 namespace App\Controller\Pages;
 
 use \App\View\View;
-use \App\Model\Code\HttpCode;
+use \App\Model\Enum\HttpCode;
 
 class Error extends Page{
     

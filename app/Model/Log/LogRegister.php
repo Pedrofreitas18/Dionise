@@ -1,11 +1,11 @@
 <?php
 namespace App\Model\Log;
 
-use \App\Model\Code\LogType;
+use \App\Model\Enum\NotificationSeverity;
 
 class LogRegister{
 
-    public static function newLogLine($code, $type, $message, $fileSet){   
+    public static function newLogLine($code, $severity, $message, $fileSet){   
         $content = '';
         
         $dirPath = __DIR__ ."\\files\\". $fileSet;
@@ -14,14 +14,14 @@ class LogRegister{
         $filePath = $dirPath .'\\'. $fileSet . date('Y_m_d') .'.log';
         try
         {
-            if (!file_exists($filePath)) $content .= 'DateTime => Type: HttpCode | Message;' . PHP_EOL;
+            if (!file_exists($filePath)) $content .= 'DateTime => Severity: Code | Message;' . PHP_EOL;
             $file = fopen($filePath, 'a');
         
             $content .= 
-                date('Y-m-d H:i:s')         . " => "    
-                .LogType::getMessage($type) . ": "
-                .$code                      . " | "
-                .$message                   . ";"
+                date('Y-m-d H:i:s')                      . " => "    
+                .NotificationSeverity::getMessage($severity) . ": "
+                .$code                                   . " | "
+                .$message                                . ";"
                 .PHP_EOL;
 
             fwrite($file, $content);

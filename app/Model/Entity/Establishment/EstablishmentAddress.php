@@ -1,9 +1,13 @@
 <?php
 namespace App\Model\Entity\Establishment;
 
+use \Exception;
 use \App\Model\DBConnection\Database;
+use \App\Model\Log\LogRegister;
 
 class EstablishmentAddress{
+  const LOG_FILE_SET    = 'databaseLog';
+  const LOG_CODE_PREFIX = 'ET-12';
 
   public $id;
   public $city;
@@ -15,15 +19,22 @@ class EstablishmentAddress{
   public $cep;
 
   public static function getByEstablishmentId($establishmentID){
+    $query = "SELECT * FROM EstablishmentAddress WHERE establishment = :establishment LIMIT 1";
+    
     $pdo = Database::getPDO();
     try{
-      $stmt = $pdo->prepare("SELECT * FROM EstablishmentAddress WHERE establishment = :establishment LIMIT 1");
+      $stmt = $pdo->prepare($query);
       $stmt->execute( array(
         'establishment' => $establishmentID
       ));
-    } catch (\throwable $th){
-      echo $th;  //precisa de tratamento de exception
-      die;
+    } catch (Exception $e){
+      LogRegister::newLogLine(
+        EstablishmentAddress::LOG_CODE_PREFIX .':01', 
+        4, 
+        'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
+        EstablishmentAddress::LOG_FILE_SET
+      );
+      return null;
     }
 
     if ($stmt->rowCount() != 1) return null;
