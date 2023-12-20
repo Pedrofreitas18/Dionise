@@ -1,7 +1,7 @@
 <?php
-namespace App\Controller\Http;
+namespace App\Model\Code;
 
-class HttpCodes{
+class HttpCode{
     private static $codesEnum  = [
         '1xx' => 'Informational',
         
@@ -75,15 +75,10 @@ class HttpCodes{
         '511' => 'Network Authentication Required'
     ];
 
-
-//    public static function getHttpCodes(){
-//        return HttpCodes::$codesEnum;
-//    }
-
     public static function getMessage($code){   
         return is_string($code) 
-            ? HttpCodes::$codesEnum[$code]
-            : HttpCodes::$codesEnum[strval($code)];
+            ? HttpCode::$codesEnum[$code]
+            : HttpCode::$codesEnum[strval($code)];
     }
 
 }

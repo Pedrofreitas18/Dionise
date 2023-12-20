@@ -42,4 +42,12 @@ class Request{
         return $this->headers;
     }
 
+    public function getUrl(){
+        $parsedUrl = parse_url(URL);
+        return 
+             $parsedUrl['scheme'] . '://' 
+            .$parsedUrl['host'] 
+            .$this->getUri(); 
+    }
+
 }

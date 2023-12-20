@@ -4,8 +4,11 @@ namespace App\Controller\Http;
 use \Closure;
 use \Exception;
 use \ReflectionFunction;
-use \App\Controller\Http\HttpCodes;
-use \App\Controller\Pages\Erro;
+
+use \App\Model\Code\HttpCode;
+use \App\Controller\Pages\Error;
+use \App\Model\Log\LogRegister;
+
 
 class Router{
     private $url = '';
@@ -61,10 +64,11 @@ class Router{
         try{
             
             $route = $this->getRoute();
-            if(!isset($route['controller'])) throw new Exception(HttpCodes::getMessage(500), 500);
+            if(!isset($route['controller'])) throw new Exception($this->request->getUrl(), 500);
            
             $args = [];
             $reflection = new ReflectionFunction($route['controller']);
+     
             foreach($reflection->getParameters() as $parameter){
                 $name = $parameter->getName();
                 $args[$name] = $route['variables'][$name] ?? '';
@@ -72,13 +76,15 @@ class Router{
             
             return call_user_func_array($route['controller'], $args);
         }catch(Exception $e){
-            return new Response($e->getCode(), Erro::getErrorPage($e->getCode(), $e->getMessage()));
+            LogRegister::newLogLine($e->getCode(), 2, $e->getMessage(), 'routesLog');
+            return new Response($e->getCode(), Error::getHttpErrorPage($e->getCode()));
         }
     }
 
     private function getRoute(){
         $uri = $this->getUri();
         $httpMethod = $this->request->getHttpMethod();
+        
         foreach($this->routes as $patternRoute=>$methods){
             if(preg_match($patternRoute, $uri, $matches)){
                 if(isset($methods[$httpMethod])){
@@ -90,10 +96,10 @@ class Router{
 
                     return $methods[$httpMethod];
                 }
-                throw new Exception(HttpCodes::getMessage(405), 405);
+                throw new Exception($this->request->getUrl(), 405);
             }
         }
-        throw new Exception(HttpCodes::getMessage(404), 404);
+        throw new Exception($this->request->getUrl(), 404);
     }
 
     private function getUri(){
@@ -106,4 +112,5 @@ class Router{
         $parseUrl = parse_url($this->url);
         $this->prefix = $parseUrl['path'] ?? '';
     }
+
 }
