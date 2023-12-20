@@ -1,0 +1,15 @@
+DateTime => Type: HttpCode | Message;
+2023-12-20 16:04:39 => Warning: 0 | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:10:28 => Warning: 0 | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:11:28 => Warning: 0 | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:11:40 => Warning: 0 | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:21:40 => Warning:  | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:21:57 => Warning:  | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:23:42 => Warning:  | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:28:17 => Warning:  | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:32:32 => : 404 | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:32:32 => : 404 | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:32:59 => Warning: 404 | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:34:48 => Warning: 404 | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:53:43 => Warning: 404 | http://localhost/Dionise/Establishmentz/2;
+2023-12-20 16:54:19 => Warning: 404 | http://localhost/Dionise/Establishmentz/2;

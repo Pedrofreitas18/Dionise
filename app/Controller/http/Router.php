@@ -64,7 +64,7 @@ class Router{
         try{
             
             $route = $this->getRoute();
-            if(!isset($route['controller'])) throw new Exception($this->request->getUrl(), 500);
+            if(!isset($route['controller'])) throw new HttpException($this->request->getUrl(), 500, 4);;
            
             $args = [];
             $reflection = new ReflectionFunction($route['controller']);
@@ -75,9 +75,9 @@ class Router{
             }
             
             return call_user_func_array($route['controller'], $args);
-        }catch(Exception $e){
-            LogRegister::newLogLine($e->getCode(), 2, $e->getMessage(), 'routesLog');
-            return new Response($e->getCode(), Error::getHttpErrorPage($e->getCode()));
+        } catch (HttpException $e) {
+            LogRegister::newLogLine($e->getHttpCode(), $e->getSeverity(), $e->getMessage(), 'routesLog');
+            return new Response($e->getHttpCode(), Error::getHttpErrorPage($e->getHttpCode()));
         }
     }
 
@@ -96,10 +96,10 @@ class Router{
 
                     return $methods[$httpMethod];
                 }
-                throw new Exception($this->request->getUrl(), 405);
+                throw new HttpException($this->request->getUrl(), 405, 2);
             }
         }
-        throw new Exception($this->request->getUrl(), 404);
+        throw new HttpException($this->request->getUrl(), 404, 2);
     }
 
     private function getUri(){
