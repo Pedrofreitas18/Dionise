@@ -7,7 +7,9 @@
     },
     "require": {
         "vlucas/phpdotenv": "^5.5",
-        "php": "^7.2",
-        "ext-pdo": "*"
+        "php": "^8.3.1",
+        "ext-pdo": "*",
+        "dragonmantank/cron-expression": "^3.3",
+        "doctrine/dbal": "^3.7"
     }
 }

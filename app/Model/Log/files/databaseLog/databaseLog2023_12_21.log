@@ -1,0 +1,8 @@
+DateTime => Severity: Code | Message;
+2023-12-21 00:00:23 => Emergency: DB-10:01 | Database fail => could not find driver;
+2023-12-21 00:00:24 => Emergency: DB-10:01 | Database fail => could not find driver;
+2023-12-21 00:00:24 => Emergency: DB-10:01 | Database fail => could not find driver;
+2023-12-21 00:01:00 => Emergency: DB-10:01 | Database fail => could not find driver;
+2023-12-21 00:01:00 => Emergency: DB-10:01 | Database fail => could not find driver;
+2023-12-21 00:01:00 => Emergency: DB-10:01 | Database fail => could not find driver;
+2023-12-21 00:01:01 => Emergency: DB-10:01 | Database fail => could not find driver;

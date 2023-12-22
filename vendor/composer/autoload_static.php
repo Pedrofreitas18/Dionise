@@ -13,6 +13,10 @@ class ComposerStaticInit26e1ace7318d9d0aece2259e51160e09
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Webmozart\\Assert\\' => 17,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -21,6 +25,8 @@ class ComposerStaticInit26e1ace7318d9d0aece2259e51160e09
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
+            'Psr\\Cache\\' => 10,
             'PhpOption\\' => 10,
         ),
         'G' => 
@@ -30,6 +36,14 @@ class ComposerStaticInit26e1ace7318d9d0aece2259e51160e09
         'D' => 
         array (
             'Dotenv\\' => 7,
+            'Doctrine\\Deprecations\\' => 22,
+            'Doctrine\\DBAL\\' => 14,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\' => 16,
+        ),
+        'C' => 
+        array (
+            'Cron\\' => 5,
         ),
         'A' => 
         array (
@@ -38,6 +52,10 @@ class ComposerStaticInit26e1ace7318d9d0aece2259e51160e09
     );
 
     public static $prefixDirsPsr4 = array (
+        'Webmozart\\Assert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -50,6 +68,14 @@ class ComposerStaticInit26e1ace7318d9d0aece2259e51160e09
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
+        ),
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
@@ -61,6 +87,26 @@ class ComposerStaticInit26e1ace7318d9d0aece2259e51160e09
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
+        'Doctrine\\DBAL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/dbal/src',
+        ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/event-manager/src',
+        ),
+        'Cron\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
         'App\\' => 
         array (

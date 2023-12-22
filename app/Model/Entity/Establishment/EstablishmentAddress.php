@@ -3,7 +3,7 @@ namespace App\Model\Entity\Establishment;
 
 use \Exception;
 use \App\Model\DBConnection\Database;
-use \App\Model\Log\LogRegister;
+use \App\Model\Log\LogManager;
 
 class EstablishmentAddress{
   const LOG_FILE_SET    = 'databaseLog';
@@ -28,7 +28,7 @@ class EstablishmentAddress{
         'establishment' => $establishmentID
       ));
     } catch (Exception $e){
-      LogRegister::newLogLine(
+      LogManager::log(
         EstablishmentAddress::LOG_CODE_PREFIX .':01', 
         4, 
         'Query fail => '. $query .' | Exception => '. $e->getMessage(), 

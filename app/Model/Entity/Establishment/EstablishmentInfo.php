@@ -1,8 +1,9 @@
 <?php
 namespace App\Model\Entity\Establishment;
 
+use \Exception;
 use \App\Model\DBConnection\Database;
-use \App\Model\Log\LogRegister;
+use \App\Model\Log\LogManager;
 
 class EstablishmentInfo{
     const LOG_FILE_SET    = 'databaseLog';
@@ -21,8 +22,8 @@ class EstablishmentInfo{
             $stmt->execute( array(
                 'establishment' => $establishmentId
             ));
-        } catch (\throwable $th) {
-            LogRegister::newLogLine(
+        } catch (Exception $e) {
+            LogManager::log(
                 EstablishmentInfo::LOG_CODE_PREFIX .':01', 
                 4, 
                 'Query fail => '. $query .' | Exception => '. $e->getMessage(), 

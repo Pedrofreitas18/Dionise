@@ -3,7 +3,7 @@ namespace App\Model\DBConnection;
 
 use \Exception;
 use PDO;
-use \App\Model\Log\LogRegister;
+use \App\Model\Log\LogManager;
 use \App\Controller\Http\Response;
 use \App\Controller\Pages\Error;
 
@@ -20,21 +20,18 @@ class Database
 
     public static function config($username, $password, $host, $dbName)
     {
-        self::$username = $username;
-        self::$host     = $host;
-        self::$password = $password;
-        self::$dbName   = $dbName;
 
         try{
+            self::$username = $username;
+            self::$host     = $host;
+            self::$password = $password;
+            self::$dbName   = $dbName;
             self::$conn = new PDO("mysql:dbname=$dbName;host=$host", $username, $password); 
         } catch (Exception $e)
         {
-            LogRegister::newLogLine(
-                Database::LOG_CODE_PREFIX .':01', 
-                5, 
-                'Database fail => ' . $e->getMessage(), 
-                Database::LOG_FILE_SET
-            );
+           LogManager::log(Database::LOG_CODE_PREFIX . ':01', 5, $e->getMessage(), Database::LOG_FILE_SET);
+           echo $e->getMessage();
+           die;
         }
         
     }

@@ -6,7 +6,7 @@ use \ReflectionFunction;
 
 use \App\Model\Enum\HttpCode;
 use \App\Controller\Pages\Error;
-use \App\Model\Log\LogRegister;
+use \App\Model\Log\LogManager;
 use \App\Controller\Exception\HttpException;
 
 class Router{
@@ -77,7 +77,7 @@ class Router{
             
             return call_user_func_array($route['controller'], $args);
         } catch (HttpException $e) {
-            LogRegister::newLogLine($e->getHttpCode(), $e->getSeverity(), $e->getMessage(), LOG_FILE_SET);
+            LogManager::log($e->getHttpCode(), $e->getSeverity(), $e->getMessage(), self::LOG_FILE_SET);
             return new Response($e->getHttpCode(), Error::getHttpErrorPage($e->getHttpCode()));
         }
     }

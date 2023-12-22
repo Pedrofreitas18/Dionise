@@ -3,7 +3,7 @@ namespace App\Model\Entity\Establishment;
 
 use \Exception;
 use \App\Model\DBConnection\Database;
-use \App\Model\Log\LogRegister;
+use \App\Model\Log\LogManager;
 
 class Establishment{
   const LOG_FILE_SET    = 'databaseLog';
@@ -17,15 +17,17 @@ class Establishment{
   public static function getTodaysHighlights($idPage){
     $idInit  = (int) ($idPage * 12) - 11;
     $idFinal = (int)  $idPage * 12;
+    $query = "SELECT * FROM Establishment WHERE id >= :idInit AND id <= :idFinal ORDER BY ID ASC LIMIT 12";
+    
     $pdo    = Database::getPDO();
     try{
-      $stmt = $pdo->prepare("SELECT * FROM Establishment WHERE id >= :idInit AND id <= :idFinal ORDER BY ID ASC LIMIT 12");
+      $stmt = $pdo->prepare($query);
       $stmt->execute( array(
         'idInit'  =>  $idInit,
         'idFinal' =>  $idFinal
       ));
-    } catch (\throwable $th){
-      LogRegister::newLogLine(
+    } catch (Exception $e){
+      Manager::log(
         Establishment::LOG_CODE_PREFIX .':01', 
         4, 
         'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
@@ -60,7 +62,7 @@ class Establishment{
         'id' => $id
       ));
     } catch (Exception $e){
-      LogRegister::newLogLine(
+      LogManager::log(
         Establishment::LOG_CODE_PREFIX .':02', 
         4, 
         'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
@@ -90,7 +92,7 @@ class Establishment{
       $stmt = $pdo->prepare($query);
       $stmt->execute();
     } catch (Exception $e){
-      LogRegister::newLogLine(
+      LogManager::log(
         Establishment::LOG_CODE_PREFIX .':03', 
         4, 
         'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
