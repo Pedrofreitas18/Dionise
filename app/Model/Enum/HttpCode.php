@@ -75,10 +75,13 @@ class HttpCode{
         '511' => 'Network Authentication Required'
     ];
 
+
+
     public static function getMessage($code){   
-        return is_string($code) 
+        $message = is_string($code) 
             ? HttpCode::$codesEnum[$code]
             : HttpCode::$codesEnum[strval($code)];
+        return is_null($message) ? 'Undefined' : $message;
     }
 
 }

@@ -1,7 +1,11 @@
 <?php
 namespace App\Controller\Http;
 
+use \App\Model\Log\LogManager;
+
 class Response{
+    const LOG_FILE_SET = 'routesLog';
+
     private $httpCode = 200;
     private $headers = [];
     private $contentType = 'text/html';
@@ -13,16 +17,18 @@ class Response{
         $this->setContentType($contentType);  
     }
 
+//gets_and_setters_____________________________________________________________________________________________________________________________________________________________________________
+    public function getHttpCode() { return $this->httpCode; }
+
     public function setContentType($contentType){
         $this->contentType = $contentType;
         $this->addHeaders('Content-Type', $contentType);
     }
-    public function addHeaders($key, $value){
-        $this->headers[$key] = $value;
-    }
+    public function addHeaders($key, $value) { $this->headers[$key] = $value; }
 
+//Other________________________________________________________________________________________________________________________________________________________________
     public function sendHeaders(){
-        http_response_code($this->httpCode);
+        http_response_code($this->getHttpCode());
         foreach($this->headers as $key=>$value){
             header($key. ': ' . $value);
         }

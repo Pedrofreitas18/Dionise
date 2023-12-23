@@ -3,7 +3,8 @@ namespace App\Model\Enum;
 
 class NotificationSeverity{
     private static $codesEnum  = [
-        '0' => 'Debug',
+        '0' => 'Debug',         //Description: Events that provide system debug, do not indicate any risk, impact or useful information on long time period.  
+                                //Examples: System debug and tests. 
 
         '1' => 'Informational', //Description: Events that provide useful information but do not have an immediate impact on processes or services.
                                 //Examples: Informational logs, notifications of normal events.
@@ -22,9 +23,10 @@ class NotificationSeverity{
     ];
 
     public static function getMessage($code){   
-        return is_string($code) 
+        $message = is_string($code) 
             ? NotificationSeverity::$codesEnum[$code]
             : NotificationSeverity::$codesEnum[strval($code)];
+        return is_null($message) ? 'Undefined' : $message;
     }
 
 }

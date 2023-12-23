@@ -1,0 +1,740 @@
+DateTime => Severity: Code | Message;2023-12-22 22:41:29 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 22:41:30 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 22:41:31 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 22:42:22 => Attention: 500 | App\Controller\Pages\Establishment::getAddress fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\EstablishmentAddress Object
+        (
+            [id:App\Model\Entity\Establishment\EstablishmentAddress:private] => 1
+            [city:App\Model\Entity\Establishment\EstablishmentAddress:private] => São Paulo
+            [state:App\Model\Entity\Establishment\EstablishmentAddress:private] => SP
+            [neighborhood:App\Model\Entity\Establishment\EstablishmentAddress:private] => Consolação
+            [address:App\Model\Entity\Establishment\EstablishmentAddress:private] => Rua Augusta
+            [number:App\Model\Entity\Establishment\EstablishmentAddress:private] => 501
+            [complement:App\Model\Entity\Establishment\EstablishmentAddress:private] => Prédio Roxo
+            [cep:App\Model\Entity\Establishment\EstablishmentAddress:private] => 01304001
+        )
+
+)
+;
+2023-12-22 22:44:54 => Attention: 500 | App\Controller\Pages\Establishment::getAddress fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\EstablishmentAddress Object
+        (
+            [id:App\Model\Entity\Establishment\EstablishmentAddress:private] => 1
+            [city:App\Model\Entity\Establishment\EstablishmentAddress:private] => São Paulo
+            [state:App\Model\Entity\Establishment\EstablishmentAddress:private] => SP
+            [neighborhood:App\Model\Entity\Establishment\EstablishmentAddress:private] => Consolação
+            [address:App\Model\Entity\Establishment\EstablishmentAddress:private] => Rua Augusta
+            [number:App\Model\Entity\Establishment\EstablishmentAddress:private] => 501
+            [complement:App\Model\Entity\Establishment\EstablishmentAddress:private] => Prédio Roxo
+            [cep:App\Model\Entity\Establishment\EstablishmentAddress:private] => 01304001
+        )
+
+)
+;
+2023-12-22 22:44:55 => Attention: 500 | App\Controller\Pages\Establishment::getAddress fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\EstablishmentAddress Object
+        (
+            [id:App\Model\Entity\Establishment\EstablishmentAddress:private] => 1
+            [city:App\Model\Entity\Establishment\EstablishmentAddress:private] => São Paulo
+            [state:App\Model\Entity\Establishment\EstablishmentAddress:private] => SP
+            [neighborhood:App\Model\Entity\Establishment\EstablishmentAddress:private] => Consolação
+            [address:App\Model\Entity\Establishment\EstablishmentAddress:private] => Rua Augusta
+            [number:App\Model\Entity\Establishment\EstablishmentAddress:private] => 501
+            [complement:App\Model\Entity\Establishment\EstablishmentAddress:private] => Prédio Roxo
+            [cep:App\Model\Entity\Establishment\EstablishmentAddress:private] => 01304001
+        )
+
+)
+;
+2023-12-22 22:45:08 => Attention: 500 | App\Controller\Pages\Establishment::getAddress fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\EstablishmentAddress Object
+        (
+            [id:App\Model\Entity\Establishment\EstablishmentAddress:private] => 1
+            [city:App\Model\Entity\Establishment\EstablishmentAddress:private] => São Paulo
+            [state:App\Model\Entity\Establishment\EstablishmentAddress:private] => SP
+            [neighborhood:App\Model\Entity\Establishment\EstablishmentAddress:private] => Consolação
+            [address:App\Model\Entity\Establishment\EstablishmentAddress:private] => Rua Augusta
+            [number:App\Model\Entity\Establishment\EstablishmentAddress:private] => 501
+            [complement:App\Model\Entity\Establishment\EstablishmentAddress:private] => Prédio Roxo
+            [cep:App\Model\Entity\Establishment\EstablishmentAddress:private] => 01304001
+        )
+
+)
+;
+2023-12-22 22:45:29 => Attention: 500 | App\Controller\Pages\Establishment::getAddress fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\EstablishmentAddress Object
+        (
+            [id:App\Model\Entity\Establishment\EstablishmentAddress:private] => 1
+            [city:App\Model\Entity\Establishment\EstablishmentAddress:private] => São Paulo
+            [state:App\Model\Entity\Establishment\EstablishmentAddress:private] => SP
+            [neighborhood:App\Model\Entity\Establishment\EstablishmentAddress:private] => Consolação
+            [address:App\Model\Entity\Establishment\EstablishmentAddress:private] => Rua Augusta
+            [number:App\Model\Entity\Establishment\EstablishmentAddress:private] => 501
+            [complement:App\Model\Entity\Establishment\EstablishmentAddress:private] => Prédio Roxo
+            [cep:App\Model\Entity\Establishment\EstablishmentAddress:private] => 01304001
+        )
+
+)
+;
+2023-12-22 22:45:29 => Attention: 500 | App\Controller\Pages\Establishment::getAddress fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\EstablishmentAddress Object
+        (
+            [id:App\Model\Entity\Establishment\EstablishmentAddress:private] => 1
+            [city:App\Model\Entity\Establishment\EstablishmentAddress:private] => São Paulo
+            [state:App\Model\Entity\Establishment\EstablishmentAddress:private] => SP
+            [neighborhood:App\Model\Entity\Establishment\EstablishmentAddress:private] => Consolação
+            [address:App\Model\Entity\Establishment\EstablishmentAddress:private] => Rua Augusta
+            [number:App\Model\Entity\Establishment\EstablishmentAddress:private] => 501
+            [complement:App\Model\Entity\Establishment\EstablishmentAddress:private] => Prédio Roxo
+            [cep:App\Model\Entity\Establishment\EstablishmentAddress:private] => 01304001
+        )
+
+)
+;
+2023-12-22 23:14:52 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:14:54 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:17:52 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:17:59 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:18:33 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:18:35 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:18:36 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:24:11 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:24:11 => Attention: 500 | App\Controller\Pages\Establishment::getEstablishment fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:38:11 => Attention: 500 | App\Controller\Pages\Home::getEstablishments fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [1] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 2
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [2] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 3
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [3] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 4
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [4] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 5
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [5] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 6
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [6] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 7
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [7] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 8
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [8] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 9
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [9] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 10
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [10] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 11
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [11] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 12
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:38:12 => Attention: 500 | App\Controller\Pages\Home::getEstablishments fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [1] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 2
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [2] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 3
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [3] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 4
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [4] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 5
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [5] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 6
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [6] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 7
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [7] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 8
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [8] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 9
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [9] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 10
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [10] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 11
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [11] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 12
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:38:15 => Attention: 500 | App\Controller\Pages\Home::getEstablishments fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [1] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 2
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [2] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 3
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [3] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 4
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [4] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 5
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [5] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 6
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [6] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 7
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [7] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 8
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [8] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 9
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [9] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 10
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [10] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 11
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [11] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 12
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:38:36 => Attention: 500 | App\Controller\Pages\Home::getEstablishments fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [1] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 2
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [2] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 3
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [3] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 4
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [4] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 5
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [5] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 6
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [6] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 7
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [7] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 8
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [8] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 9
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [9] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 10
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [10] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 11
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [11] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 12
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;
+2023-12-22 23:38:36 => Attention: 500 | App\Controller\Pages\Home::getEstablishments fail -> Invalid Argument: Array
+(
+    [0] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 1
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [1] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 2
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [2] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 3
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [3] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 4
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [4] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 5
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [5] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 6
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [6] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 7
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [7] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 8
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [8] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 9
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [9] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 10
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [10] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 11
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+    [11] => App\Model\Entity\Establishment\Establishment Object
+        (
+            [id:App\Model\Entity\Establishment\Establishment:private] => 12
+            [name:App\Model\Entity\Establishment\Establishment:private] => Dionísio
+            [introImageLink:App\Model\Entity\Establishment\Establishment:private] => https://dicasdonossobrasil.com.br/wp-content/uploads/2018/04/Balada-Curitiba.jpg
+            [description:App\Model\Entity\Establishment\Establishment:private] => Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius nulla malesuada sem consequat tristique. Mauris male
+        )
+
+)
+;

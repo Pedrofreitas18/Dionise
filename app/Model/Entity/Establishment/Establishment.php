@@ -6,105 +6,75 @@ use \App\Model\DBConnection\Database;
 use \App\Model\Log\LogManager;
 
 class Establishment{
-  const LOG_FILE_SET    = 'databaseLog';
-  const LOG_CODE_PREFIX = 'ET-10';
+  private $id;
+  private $name;
+  private $introImageLink;
+  private $description;
 
-  public $id;
-  public $name;
-  public $introImageLink;
-  public $description;
-   
-  public static function getTodaysHighlights($idPage){
+  public function __construct($id = '', $name = '', $introImageLink = '', $description = '') {
+    $this->id             = $id;
+    $this->name           = $name;
+    $this->introImageLink = $introImageLink;
+    $this->description    = $description;
+  }
+
+//gets_and_setters_____________________________________________________________________________________________________________________________________________________________________________
+  public function getId()             { return $this->id; }
+  public function getName()           { return $this->name; }
+  public function getIntroImageLink() { return $this->introImageLink; }
+  public function getDescription()    { return $this->description; }
+  
+  public function setId($id)                         { $this->id = $id; }
+  public function setName($name)                     { $this->name = $name; }
+  public function setIntroImageLink($introImageLink) { $this->introImageLink = $introImageLink; }
+  public function setDescription($description)       { $this->description = $description; }
+  
+  
+//Read_________________________________________________________________________________________________________________________________________________________________
+  public static function getTodaysHighlights($idPage)
+  {
     $idInit  = (int) ($idPage * 12) - 11;
     $idFinal = (int)  $idPage * 12;
-    $query = "SELECT * FROM Establishment WHERE id >= :idInit AND id <= :idFinal ORDER BY ID ASC LIMIT 12";
-    
-    $pdo    = Database::getPDO();
-    try{
-      $stmt = $pdo->prepare($query);
-      $stmt->execute( array(
-        'idInit'  =>  $idInit,
-        'idFinal' =>  $idFinal
-      ));
-    } catch (Exception $e){
-      Manager::log(
-        Establishment::LOG_CODE_PREFIX .':01', 
-        4, 
-        'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
-        Establishment::LOG_FILE_SET
-      );
-      return null;
-    }
 
-    if (!$stmt->rowCount() > 0) return null;
+    $stmt = Database::runQuery(
+      "SELECT * FROM Establishment WHERE id >= :idInit AND id <= :idFinal ORDER BY ID ASC LIMIT 12", 
+       array('idInit'  =>  $idInit, 'idFinal' =>  $idFinal)
+    );
     
-    $return = [];
-    foreach ($stmt->fetchAll() as $row)
-    {
-      $obEstablishment = new Establishment;
-      $obEstablishment->id             = $row['ID'];
-      $obEstablishment->name           = $row['name'];
-      $obEstablishment->description    = $row['description'];
-      $obEstablishment->introImageLink = $row['introImage'];
-      
-      array_push($return, $obEstablishment);
-    }
-    return $return;
+    return self::stmtToEstablishments($stmt);
   }
 
-  public static function getById($id){
-    $query = "SELECT * FROM Establishment WHERE id = :id LIMIT 1";
+  public static function getById($id)
+  {
+    $stmt = Database::runQuery(
+      "SELECT * FROM Establishment WHERE id = :id LIMIT 1", 
+       array('id' => $id)
+    );
     
-    $pdo = Database::getPDO();
-    try{
-      $stmt = $pdo->prepare($query);
-      $stmt->execute( array(
-        'id' => $id
-      ));
-    } catch (Exception $e){
-      LogManager::log(
-        Establishment::LOG_CODE_PREFIX .':02', 
-        4, 
-        'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
-        Establishment::LOG_FILE_SET
-      );
-      return null;
-    }
-
-    if ($stmt->rowCount() != 1) return null;
-
-    $row = $stmt->fetchAll()[0];
-
-    $obEstablishment = new Establishment;
-    $obEstablishment->id             = $row['ID'];
-    $obEstablishment->name           = $row['name'];
-    $obEstablishment->description    = $row['description'];
-    $obEstablishment->introImageLink = $row['introImage'];
-
-    return $obEstablishment;
+    return self::stmtToEstablishments($stmt);
   }
 
-  public static function getNumberOfEstablishments(){
-    $query = "SELECT COUNT(ID) as count FROM Establishment LIMIT 1";
+  public static function getNumberOfEstablishments()
+  {
+    $stmt = Database::runQuery("SELECT COUNT(ID) as count FROM Establishment LIMIT 1");
 
-    $pdo = Database::getPDO();
-    try{
-      $stmt = $pdo->prepare($query);
-      $stmt->execute();
-    } catch (Exception $e){
-      LogManager::log(
-        Establishment::LOG_CODE_PREFIX .':03', 
-        4, 
-        'Query fail => '. $query .' | Exception => '. $e->getMessage(), 
-        Establishment::LOG_FILE_SET
-      );
-      return null;
-    }
-
-    if ($stmt->rowCount() != 1) return null;
-
-    $row = $stmt->fetchAll()[0];
-    return $row['count'];
+    return $stmt->rowCount() != 1 
+      ? null
+      : $stmt->fetchAll()[0]['count'];
   }
 
+//Other________________________________________________________________________________________________________________________________________________________________
+
+  public static function stmtToEstablishments($stmt) 
+  {
+    if ($stmt->rowCount() == 0) return [];
+
+    $establishmentArray = array_map(
+      fn($row) => new Establishment($row['ID'], $row['name'], $row['introImage'], $row['description']),
+      $stmt->fetchAll()
+    ); 
+    
+    return $establishmentArray;
+    //return count($establishmentArray) == 1 ? $establishmentArray[0] : $establishmentArray;
+  }
 }

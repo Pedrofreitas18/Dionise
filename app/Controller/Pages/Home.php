@@ -3,35 +3,53 @@ namespace App\Controller\Pages;
 
 use \App\View\View;
 use \App\Model\Entity\Establishment\Establishment;
+use \App\Utils\DataValidator;
+use \App\Controller\Exception\HttpException;
+use \App\Model\Log\LogManager;
 
 class Home extends Page{
+    const LOG_FILE_SET = 'pageControllerLog';
+    
+    public static function getHomePage($id) { 
+        try {
+            return 
+                parent::getPage(
+                    'Dionise - Home', 
+                     self::getHome($id), 
+                    'Default'
+                );
+        }catch(HttpException $e){
+            LogManager::log($e->getHttpCode(), $e->getSeverity(), $e->getMessage(), self::LOG_FILE_SET);
+            return Error::getHttpErrorPage($e->getHttpCode());
+        }
+    }
 
-    public static function getHome($currentPage)
+    private static function getHome($currentPage)
     {
-
-        $content =  View::render('pages/Home/HomePage', [
+        return View::render('pages/Home/HomePage', [
             'itens'   => self::getEstablishments($currentPage),
             'navPage' => self::getPageNavigator($currentPage)
         ]);
-
-        return parent::getPage('Dionise - Home', 'Default', $content);
     }
 
     private static function getEstablishments($currentPage)
     {
-        $content = '';
-        $itens = Establishment::getTodaysHighlights($currentPage);
-
-        foreach ($itens as &$item) {
-            $content .=  View::render('pages/Home/Item', [
-                'id'             => $item->id,
-                'name'           => $item->name,
-                'description'    => $item->description,
-                'introImageLink' => $item->introImageLink
-            ]);
-        }
-
-        return $content;
+        $establishmentArray = Establishment::getTodaysHighlights($currentPage);
+        
+        if(!DataValidator::isValidObjectArray($establishmentArray, Establishment::class, 0)) 
+            throw new HttpException(__METHOD__ . ' fail -> Invalid Argument: ' . print_r($establishmentArray, true), 500, 4);
+        if(sizeof($establishmentArray) == 0)                                                          
+            throw new HttpException(__METHOD__ . ' fail -> No establishments founds ID = ' . $currentPage, 404, 1);
+                
+        return implode('', array_map(
+            fn($establishment) => View::render('pages/Home/Item', [
+                'id'             => $establishment->getId(),
+                'name'           => $establishment->getName(),
+                'description'    => $establishment->getDescription(),
+                'introImageLink' => $establishment->getIntroImageLink()
+            ]),
+            $establishmentArray
+        )); 
     }
 
     private static function getPageNavigator($currentPage)
@@ -71,5 +89,4 @@ class Home extends Page{
 
         return $content;
     }
-
 }

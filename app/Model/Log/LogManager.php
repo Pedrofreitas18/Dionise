@@ -16,11 +16,20 @@ class LogManager{
             echo $e->getMessage();
         }
     }
-
+    
     public static function purge($filtro, $logFiles) {
-        $filtredList = array_filter($logFiles, $filtro);
-        array_map(fn($file) => $file->delete(), $filtredList);
+        array_map(
+            fn($file) => $file->delete(), 
+            array_filter($logFiles, $filtro)
+        );
     }
+
+    //implementation example
+    //LogManager::purge( 
+    //    fn($logFile) => $logFile->getDate()->diff(new DateTime())->days >= 5,
+    //    LogFile::getAllLogFiles()
+    //);
+
 
 }
 

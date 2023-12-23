@@ -20,15 +20,15 @@ class LogLine{
     }
 
 //gets_and_setters_____________________________________________________________________________________________________________________________________________________________________________
-    public function getCode() { return $this->code; }
+    public function getCode()             { return $this->code; }
 
-    public function getSeverity() { return $this->severity; }
+    public function getSeverity()         { return $this->severity; }
 
-    public function getDateTime() { return $this->dateTime; }
+    public function getDateTime()         { return $this->dateTime; }
 
-    public function getMessage() { return $this->message; }
+    public function getMessage()          { return $this->message; }
 
-    public function getSeverityMessage() { return NotificationSeverity::getMessage($this->getSeverity()); }
+    public function getSeverityMessage()  { return NotificationSeverity::getMessage($this->getSeverity()); }
 
     public static function getGetHeader() { return self::HEADER; }
 

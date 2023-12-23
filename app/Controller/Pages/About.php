@@ -14,6 +14,6 @@ class About extends Page{
             'description' => $obOrganization->description
         ]);
 
-        return parent::getPage('Dionise - Sobre', 'Default', $content);
+        return parent::getPage('Dionise - Sobre', $content, 'Default');
     }
 }

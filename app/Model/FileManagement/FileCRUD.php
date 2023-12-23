@@ -23,14 +23,30 @@ class FileCRUD{
     }
 
     public static function upsertFile($path, $content, $initText = ''){ 
-        if(!file_exists($path) or filesize($path) == 0) $this->createFile($path, $initText);
+        if(!file_exists($path) or filesize($path) == 0) self::createFile($path, $initText);
         FileCRUD::write($path, $content, 'a');
     }
 
 //Read_________________________________________________________________________________________________________________________________________________________________
-    public static function getFilesByDirectoryList($dirPaths) { return array_merge(...array_map(fn($dirPath) => FileCRUD::getFilesByDirectory($dirPath), $dirPaths)); }
+    public static function getFilesByDirectoryList($dirPaths) 
+    { 
+        return 
+            array_merge(
+                ...array_map(
+                    fn($dirPath) => FileCRUD::getFilesByDirectory($dirPath), 
+                    $dirPaths
+                )
+            ); 
+    }
 
-    public static function getFilesByDirectory($dirPath)      { return array_map(fn($filePath) =>  new LogFile($filePath), glob($dirPath . '/*')); }
+    public static function getFilesByDirectory($dirPath)
+    { 
+        return 
+            array_map(
+                fn($filePath) =>  new LogFile($filePath), 
+                glob($dirPath . '/*')
+            ); 
+    }
 
 //Delete_______________________________________________________________________________________________________________________________________________________________
     public static function delete($path) { unlink($path); }
@@ -38,8 +54,7 @@ class FileCRUD{
 //Other________________________________________________________________________________________________________________________________________________________________
 
     private static function write($path, $content, $param){ 
-        try
-        {
+        try {
             $file = fopen($path, $param);
             fwrite($file, $content);
             fclose($file);

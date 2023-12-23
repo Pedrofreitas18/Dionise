@@ -20,24 +20,42 @@ class Database
 
     public static function config($username, $password, $host, $dbName)
     {
-
-        try{
+        try {
             self::$username = $username;
             self::$host     = $host;
             self::$password = $password;
             self::$dbName   = $dbName;
             self::$conn = new PDO("mysql:dbname=$dbName;host=$host", $username, $password); 
-        } catch (Exception $e)
-        {
-           LogManager::log(Database::LOG_CODE_PREFIX . ':01', 5, $e->getMessage(), Database::LOG_FILE_SET);
-           echo $e->getMessage();
-           die;
+        } catch (Exception $e) {
+           self::log(':01', 5,'Query fail => '. $query .' | Exception => '. $e->getMessage());
+           header("Location: " . URL . "/error");
+           exit();
         }
         
     }
 
-    public static function getPDO()
-    {
-        return self::$conn;
+    public static function runQuery($query, $params = []){
+        $pdo = self::getPDO();
+        try{
+          $stmt = $pdo->prepare($query);
+          $stmt->execute($params);
+        } catch (Exception $e){
+          self::log(':02', 4,'Query fail => '. $query .' | Exception => '. $e->getMessage());
+          return null;
+        }
+    
+        return $stmt;
     }
+
+    public static function log($codeSuffix, $severity, $message) 
+    {
+        LogManager::log(
+          self::LOG_CODE_PREFIX . $codeSuffix, 
+          $severity, 
+          $message, 
+          self::LOG_FILE_SET
+        );
+    }
+
+    public static function getPDO() { return self::$conn; }
 }

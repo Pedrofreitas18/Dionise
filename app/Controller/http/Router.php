@@ -9,7 +9,7 @@ use \App\Controller\Pages\Error;
 use \App\Model\Log\LogManager;
 use \App\Controller\Exception\HttpException;
 
-class Router{
+class Router {
     const LOG_FILE_SET = 'routesLog';
     
     private $url = '';
@@ -23,66 +23,17 @@ class Router{
         $this->setPrefix();
     }
 
-    public function get($route, $params = []){
-        return $this->addRoute('GET', $route, $params);
+//gets_and_setters_____________________________________________________________________________________________________________________________________________________________________________
+
+    private function setPrefix() { $this->prefix = parse_url($this->url)['path'] ?? ''; }
+
+    private function getUri() {
+        $uri = $this->request->getUri();
+        $xUri = strlen($this->prefix) ? explode($this->prefix, $uri) : [$uri];
+        return end($xUri);
     }
 
-    public function post($route, $params = []){
-        return $this->addRoute('POST', $route, $params);
-    }
-
-    public function put($route, $params = []){
-        return $this->addRoute('PUT', $route, $params);
-    }
-
-    public function delete($route, $params = []){
-        return $this->addRoute('DELETE', $route, $params);
-    }
-
-    private function addRoute($method, $route, $params = []){
-        
-        foreach($params as $key=>$value){
-            if($value instanceof Closure){
-                $params['controller'] = $value;
-                unset($params[$key]);
-                continue;
-            }
-        }
-
-        $params['variables'] = [];
-
-        $patternVariable = '/{(.*?)}/';
-        if(preg_match_all($patternVariable, $route, $matches)){
-            $route = preg_replace($patternVariable,'(.*?)', $route);
-            $params['variables'] = $matches[1];
-        }
-
-        $patternRoute = '/^'.str_replace('/','\/', $route).'$/';
-        $this->routes[$patternRoute][$method] = $params;
-    }
-
-    public function run(){
-        try{
-            
-            $route = $this->getRoute();
-            if(!isset($route['controller'])) throw new HttpException($this->request->getUrl(), 500, 4);
-           
-            $args = [];
-            $reflection = new ReflectionFunction($route['controller']);
-     
-            foreach($reflection->getParameters() as $parameter){
-                $name = $parameter->getName();
-                $args[$name] = $route['variables'][$name] ?? '';
-            }
-            
-            return call_user_func_array($route['controller'], $args);
-        } catch (HttpException $e) {
-            LogManager::log($e->getHttpCode(), $e->getSeverity(), $e->getMessage(), self::LOG_FILE_SET);
-            return new Response($e->getHttpCode(), Error::getHttpErrorPage($e->getHttpCode()));
-        }
-    }
-
-    private function getRoute(){
+    private function getRoute() {
         $uri = $this->getUri();
         $httpMethod = $this->request->getHttpMethod();
         
@@ -103,15 +54,56 @@ class Router{
         throw new HttpException($this->request->getUrl(), 404, 2);
     }
 
-    private function getUri(){
-        $uri = $this->request->getUri();
-        $xUri = strlen($this->prefix) ? explode($this->prefix, $uri) : [$uri];
-        return end($xUri);
+    private function addRoute($method, $route, $params = []) {      
+        foreach($params as $key=>$value){
+            if($value instanceof Closure){
+                $params['controller'] = $value;
+                unset($params[$key]);
+                continue;
+            }
+        }
+
+        $params['variables'] = [];
+
+        $patternVariable = '/{(.*?)}/';
+        if(preg_match_all($patternVariable, $route, $matches)){
+            $route = preg_replace($patternVariable,'(.*?)', $route);
+            $params['variables'] = $matches[1];
+        }
+
+        $patternRoute = '/^'.str_replace('/','\/', $route).'$/';
+        $this->routes[$patternRoute][$method] = $params;
     }
 
-    private function setPrefix(){
-        $parseUrl = parse_url($this->url);
-        $this->prefix = $parseUrl['path'] ?? '';
+    
+//Other________________________________________________________________________________________________________________________________________________________________
+    public function get($route, $params = [])    { return $this->addRoute('GET', $route, $params); }
+
+    public function post($route, $params = [])   { return $this->addRoute('POST', $route, $params); }
+
+    public function put($route, $params = [])    { return $this->addRoute('PUT', $route, $params); }
+
+    public function delete($route, $params = []) { return $this->addRoute('DELETE', $route, $params); }
+
+    public function run(){
+        try{     
+            $route = $this->getRoute();
+            if(!isset($route['controller'])) throw new HttpException($this->request->getUrl(), 500, 4);
+           
+            $args = [];
+            $reflection = new ReflectionFunction($route['controller']);
+     
+            foreach($reflection->getParameters() as $parameter){
+                $name = $parameter->getName();
+                $args[$name] = $route['variables'][$name] ?? '';
+            }
+            
+            return call_user_func_array($route['controller'], $args);
+        } catch (HttpException $e) {
+            $content = Error::getHttpErrorPage($e->getHttpCode());
+            LogManager::log($e->getHttpCode(), $e->getSeverity(), $e->getMessage(), self::LOG_FILE_SET);
+            return new Response($e->getHttpCode(), $content);
+        }
     }
 
 }
