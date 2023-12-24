@@ -10,36 +10,41 @@ define("LOG_FILE_SET", "routesLog");
 
 $obRouter->get('/',[
     function(){
-        //LogManager::log(200, 1, URL . '/', LOG_FILE_SET);
-        return new Response(200, Pages\Home::getHomePage(1));
+        $content = Pages\Home::getHomePage(1);
+        LogManager::log(200, 1, URL . '/', LOG_FILE_SET);
+        return new Response(200, $content);
     }
 ]);
 
 $obRouter->get('/page/{currentPage}',[
     function($currentPage){
-        //LogManager::log(200, 1, URL . '/page/' . $currentPage, LOG_FILE_SET);
-        return new Response(200, Pages\Home::getHomePage($currentPage));
+        $content = Pages\Home::getHomePage($currentPage);
+        LogManager::log(200, 1, URL . '/page/' . $currentPage, LOG_FILE_SET);
+        return new Response(200, $content);
     }
 ]);
 
 
 $obRouter->get('/about',[
     function(){
-        //LogManager::log(200, 1, URL . '/about', LOG_FILE_SET);
-        return new Response(200, Pages\About::getAbout());
+        $content = Pages\About::getAbout();
+        LogManager::log(200, 1, URL . '/about', LOG_FILE_SET);
+        return new Response(200, $content);
     }
 ]);
 
 $obRouter->get('/Establishment/{id}',[
     function($id){
-        //LogManager::log(200, 1, URL . '/Establishment/' . $id, LOG_FILE_SET);
-        return new Response(200,  Pages\Establishment::getEstablishmentPage($id));
+        $content = Pages\Establishment::getEstablishmentPage($id);
+        LogManager::log(200, 1, URL . '/Establishment/' . $id, LOG_FILE_SET);
+        return new Response(200, $content);
     }
 ]);
 
 $obRouter->get('/error',[
     function(){
         //for exceptions only!!
-        return new Response(500, Pages\Error::getHttpErrorPage(500));
+        $content = Pages\Error::getHttpErrorPage(500);
+        return new Response(500, $content);
     }
 ]);

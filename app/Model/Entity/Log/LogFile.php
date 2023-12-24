@@ -1,15 +1,15 @@
 <?php
-namespace App\Model\Log;
+namespace App\Model\Entity\Log;
 
 use \Exception;
 use \DateTime;
-use \App\Model\Log\LogLine;
+use \App\Model\Entity\Log\LogLine;
 use \App\Model\Enum\NotificationSeverity;
 use \App\Model\FileManagement\FileCRUD;
 
 //log file schema -> MAIN_LOG_FOLDER\FILE_SET\FILE_SETyyyy_mm_dd.log
 class LogFile{
-    const MAIN_LOG_FOLDER = __DIR__ ."\\files";
+    const MAIN_LOG_FOLDER = ROOT_PATH . "\\app\\model\\Log\\files";
     const DATE_FORMAT     = 'Y_m_d';
     const FILE_EXTENSION  = "log";
 
@@ -20,6 +20,8 @@ class LogFile{
         $this->path = $path;
         $this->validate();
     }
+
+    public static function openFile($fileSet, $date)  { return new LogFile(LogFile::generatePath($fileSet, $date)); }
 
 //gets_and_setters_____________________________________________________________________________________________________________________________________________________________________________
     public function  getPath()             { return $this->path; }

@@ -7,6 +7,7 @@ use \App\Model\DBConnection\Database;
 
 require_once 'global.php';
 define('URL', getenv('URL'));
+define('ROOT_PATH', getenv('ROOT_PATH'));
 
 View::init([
     'URL' => URL

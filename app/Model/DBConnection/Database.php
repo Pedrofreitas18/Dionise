@@ -27,9 +27,10 @@ class Database
             self::$dbName   = $dbName;
             self::$conn = new PDO("mysql:dbname=$dbName;host=$host", $username, $password); 
         } catch (Exception $e) {
-           self::log(':01', 5,'Query fail => '. $query .' | Exception => '. $e->getMessage());
-           header("Location: " . URL . "/error");
-           exit();
+          //fatal error 
+          self::log(':01', 5,'Query fail => '. $query .' | Exception => '. $e->getMessage());
+          header("Location: " . URL . "/error");
+          exit();
         }
         
     }

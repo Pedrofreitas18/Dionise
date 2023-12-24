@@ -1,5 +1,5 @@
 <?php
-namespace App\Model\Log;
+namespace App\Model\Entity\Log;
 
 use \Exception;
 use \App\Model\Enum\NotificationSeverity;

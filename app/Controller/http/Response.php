@@ -4,7 +4,6 @@ namespace App\Controller\Http;
 use \App\Model\Log\LogManager;
 
 class Response{
-    const LOG_FILE_SET = 'routesLog';
 
     private $httpCode = 200;
     private $headers = [];

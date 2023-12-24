@@ -18,7 +18,7 @@ class FileCRUD{
         if(!file_exists($path) or filesize($path) == 0){
             $dirPath = pathinfo($path, PATHINFO_DIRNAME);
             if (!file_exists($dirPath)) FileCRUD::createDirectoryHierarchy($dirPath);
-            FileCRUD::write($path, $initText, 'w');
+            FileCRUD::write($path, $initText . PHP_EOL, 'w');
         }
     }
 
@@ -59,7 +59,8 @@ class FileCRUD{
             fwrite($file, $content);
             fclose($file);
         }catch(Exception $e){
-            echo $e->getMessage();
+            //fatal error 
+            //do not log this error. Loop failure possible
         }
     }
 
