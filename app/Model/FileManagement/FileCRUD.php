@@ -4,6 +4,7 @@ namespace App\Model\FileManagement;
 use \Exception;
 use \DateTime;
 use \App\Model\Log\LogLine;
+use \App\Model\Entity\Log\LogFile;
 use \App\Model\Enum\NotificationSeverity;
 
 class FileCRUD{

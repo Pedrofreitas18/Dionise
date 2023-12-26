@@ -8,8 +8,8 @@ use \App\Model\Entity\Log\LogFile;
 $cronExpression = CronExpression::factory('* 2 * * *');
 
 if ($cronExpression->isDue()) {
-    LogManager::purge( 
-        fn($logFile) => $logFile->getDate()->diff(new DateTime())->days >= 15,
-        LogFile::getAllLogFiles()
-    );
+    //LogManager::purge( 
+    //    fn($logFile) => $logFile->getDate()->diff(new DateTime())->days >= 15,
+    //    LogFile::getAllLogFiles()
+    //);
 }

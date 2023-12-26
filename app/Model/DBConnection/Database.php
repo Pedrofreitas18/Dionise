@@ -28,7 +28,7 @@ class Database
             self::$conn = new PDO("mysql:dbname=$dbName;host=$host", $username, $password); 
         } catch (Exception $e) {
           //fatal error 
-          self::log(':01', 5,'Query fail => '. $query .' | Exception => '. $e->getMessage());
+          self::log(':01', 5,'DB start error => '. $e->getMessage());
           header("Location: " . URL . "/error");
           exit();
         }

@@ -8,7 +8,7 @@ use \App\Model\Entity\Log\LogLine;
 class LogManager{
 
     public static function log($code, $severity, $message, $fileSet){        
-        $logFile = LogFile::openFile($fileSet, date('Y_m_d'));
+        $logFile = LogFile::open($fileSet, date('Y_m_d'));
         $logFile->addLogLines([new LogLine($code, $severity, date('Y-m-d H:i:s'), $message)]);
         $logFile->upsert();
     }

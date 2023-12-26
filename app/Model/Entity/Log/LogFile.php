@@ -6,45 +6,53 @@ use \DateTime;
 use \App\Model\Entity\Log\LogLine;
 use \App\Model\Enum\NotificationSeverity;
 use \App\Model\FileManagement\FileCRUD;
+use \App\Model\Entity\File\File;
 
 //log file schema -> MAIN_LOG_FOLDER\FILE_SET\FILE_SETyyyy_mm_dd.log
-class LogFile{
-    const MAIN_LOG_FOLDER = ROOT_PATH . "\\app\\model\\Log\\files";
-    const DATE_FORMAT     = 'Y_m_d';
-    const FILE_EXTENSION  = "log";
+class LogFile extends File{
+    const MAIN_LOG_FOLDER      = ROOT_PATH . "\\app\\model\\Log\\files";
+    const DEFAULT_LOG_FILE_SET = 'defaultLog';
+    const DATE_FORMAT          = 'Y_m_d';
+    const FILE_EXTENSION       = "log"; 
 
-    private $path;   
     private $logLines = [];
 
     public function __construct($path) {
-        $this->path = $path;
-        $this->validate();
+        parent::__construct($path);
+       
+        if( 
+            !$this->isGeneratedDateValid() or
+            !$this->isExtensionValid()     or
+            !$this->isFileSetValid()       or
+            !$this->isInMainLogFolder()  
+        )    $this->path = LogFile::generatePath(DEFAULT_LOG_FILE_SET, date('Y_m_d'));
+        
     }
 
-    public static function openFile($fileSet, $date)  { return new LogFile(LogFile::generatePath($fileSet, $date)); }
+    public static function open($fileSet, $date = null) { 
+        $filePath = LogFile::generatePath($fileSet, $date == null ? date('Y_m_d') : $date);
+        parent::open($filePath, LogLine::getGetHeader());
+        return new LogFile($filePath); 
+    }
 
 //gets_and_setters_____________________________________________________________________________________________________________________________________________________________________________
-    public function  getPath()             { return $this->path; }
+    private function getLogLines()          { return $this->logLines; }
+    public function  getFileSet()           { return basename($this->getDirPath()); } //FILE_SET = DirectoryName
+    public function  getPrefix()            { return substr($this->getName(), 0, strlen($this->getFileSet())); }
+    public function  getSuffix()            { return substr($this->getName(), strlen($this->getFileSet()), strlen($this->getName())); }
+    public function  getDate()              { return DateTime::createFromFormat(self::DATE_FORMAT, $this->getSuffix()); }
 
-    private function getLogLines()         { return $this->logLines; }
+//Create/Update_________________________________________________________________________________________________________________________________________________________
+    public function update() { 
+        parent::write($this->logLinesToString(), 'a'); 
+        $this->logLines = [];
+    }
 
-    public function  getName()             { return pathinfo($this->getPath())['filename']; }
+    public function addLogLines($logLines) { $this->logLines = array_merge($this->logLines, $logLines); }
 
-    public function  getExtension()        { return pathinfo($this->getPath())['extension']; }
+//Other________________________________________________________________________________________________________________________________________________________________
 
-    public function  getDirPath()          { return pathinfo($this->getPath())['dirname']; }
-
-    public function  getFileSet()          { return basename($this->getDirPath()); } //FILE_SET = DirectoryName
- 
-    public function  getPrefix()           { return substr($this->getName(), 0, strlen($this->getFileSet())); }
-
-    public function  getSuffix()           { return substr($this->getName(), strlen($this->getFileSet()), strlen($this->getName())); }
-
-    public function  getDate()             { return DateTime::createFromFormat(self::DATE_FORMAT, $this->getSuffix()); }
-
-    public function  addLogLines($logLines){ $this->logLines = array_merge($this->logLines, $logLines); }
-
-    public function  logLinesToString() 
+    public function  logLinesToString()
     { 
         return 
             implode(
@@ -56,51 +64,11 @@ class LogFile{
             ); 
     }
 
-//Create/Update_________________________________________________________________________________________________________________________________________________________
-    public function upsert() { FileCRUD::upsertFile($this->getPath(), $this->logLinesToString(), LogLine::getGetHeader()); }
-
-//Read_________________________________________________________________________________________________________________________________________________________________
-    public static function getAllLogFiles() 
-    { 
-        return 
-            array_merge(
-                ...array_map(
-                        fn($dirPath) => LogFile::getFilesFromDirectory($dirPath), 
-                        LogFile::getAllLogDirectories()
-                    )
-                ); 
-    }
-
-    public static function getAllLogDirectories()  { return  $dirPaths = glob(self::MAIN_LOG_FOLDER . '/*', GLOB_ONLYDIR); }
-    
-    public static function getFilesFromDirectory($dirPath) 
-    { 
-        return 
-            array_map(
-                fn($filePath) => new LogFile($filePath), 
-                array_filter(
-                    glob($dirPath . '/*', GLOB_BRACE), 
-                    'is_file'
-                )
-            ); 
-    }
-
-//Delete_______________________________________________________________________________________________________________________________________________________________
-    public function delete() { unlink($this->getPath()); }
-
-//Other________________________________________________________________________________________________________________________________________________________________
-    
     public static function generatePath($fileSet, $date) { return self::MAIN_LOG_FOLDER . '\\' . $fileSet . '\\' . $fileSet . $date . '.' . self::FILE_EXTENSION; }
-    
-    public function validate(){
-        if($this->getExtension() !== self::FILE_EXTENSION) 
-            throw new InvalidArgumentException("O parâmetro é inválido1"); //must be a .log file
-        if($this->getFileSet() !== $this->getPrefix()) 
-            throw new InvalidArgumentException("O parâmetro é inválido2"); //file prefix must be the folder name
-        if($this->getDate() == false )                 
-            throw new InvalidArgumentException("O parâmetro é inválido3"); //suffix must be a valid date string
-        
-        return true;     
-    }
+
+    public function isExtensionValid()     { return $this->getExtension() == self::FILE_EXTENSION ? true  : false; }
+    public function isFileSetValid()       { return $this->getFileSet()   == $this->getPrefix()   ? true  : false; }
+    public function isGeneratedDateValid() { return $this->getDate()      == false                ? false : true ; }
+    public function isInMainLogFolder()    { return self::MAIN_LOG_FOLDER == pathinfo($this->getDirPath())['dirname']; }
 }
 
