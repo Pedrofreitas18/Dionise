@@ -10,13 +10,13 @@ use \App\Model\FileManagement\FileCRUD;
 class File{
     protected $path;   
 
-    public function __construct($path) {
+    protected function __construct($path) {
         $this->path = $path;   
     }
 
     public static function open($filePath, $initContent = '') {   
         Directory::open(pathinfo($filePath)['dirname']); //makes sure that directory tree exists
-        
+
         $file = new File($filePath);
         if(!$file->isSet() or $file->isEmpty()) 
             $file->write($initContent == '' ? $initContent : $initContent . PHP_EOL, 'w');

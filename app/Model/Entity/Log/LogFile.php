@@ -7,6 +7,7 @@ use \App\Model\Entity\Log\LogLine;
 use \App\Model\Enum\NotificationSeverity;
 use \App\Model\FileManagement\FileCRUD;
 use \App\Model\Entity\File\File;
+use \App\Utils\DataValidator;
 
 //log file schema -> MAIN_LOG_FOLDER\FILE_SET\FILE_SETyyyy_mm_dd.log
 class LogFile extends File{
@@ -17,15 +18,14 @@ class LogFile extends File{
 
     private $logLines = [];
 
-    public function __construct($path) {
+    private function __construct($path) {
         parent::__construct($path);
        
         if( 
             !$this->isGeneratedDateValid() or
             !$this->isExtensionValid()     or
-            !$this->isFileSetValid()       or
-            !$this->isInMainLogFolder()  
-        )    $this->path = LogFile::generatePath(DEFAULT_LOG_FILE_SET, date('Y_m_d'));
+            !$this->isFileSetValid()        
+        )    $this->path = LogFile::generatePath(self::DEFAULT_LOG_FILE_SET, date('Y_m_d'));
         
     }
 
@@ -48,7 +48,7 @@ class LogFile extends File{
         $this->logLines = [];
     }
 
-    public function addLogLines($logLines) { $this->logLines = array_merge($this->logLines, $logLines); }
+    public function addLogLine($logLine) { array_push($this->logLines, $logLine); }
 
 //Other________________________________________________________________________________________________________________________________________________________________
 
@@ -64,11 +64,22 @@ class LogFile extends File{
             ); 
     }
 
+    public static function fileToLogFile($fileArray) {      
+        if(!DataValidator::isValidObjectArray($fileArray, parent::class))
+            echo 'erro';
+        
+        return 
+            array_map(
+                fn($file) =>  new self($file->getPath()),
+                $fileArray,
+            );
+    }
+
     public static function generatePath($fileSet, $date) { return self::MAIN_LOG_FOLDER . '\\' . $fileSet . '\\' . $fileSet . $date . '.' . self::FILE_EXTENSION; }
 
     public function isExtensionValid()     { return $this->getExtension() == self::FILE_EXTENSION ? true  : false; }
     public function isFileSetValid()       { return $this->getFileSet()   == $this->getPrefix()   ? true  : false; }
     public function isGeneratedDateValid() { return $this->getDate()      == false                ? false : true ; }
-    public function isInMainLogFolder()    { return self::MAIN_LOG_FOLDER == pathinfo($this->getDirPath())['dirname']; }
+    //public function isInMainLogFolder()    { return self::MAIN_LOG_FOLDER == pathinfo($this->getDirPath())['dirname']; }
 }
 

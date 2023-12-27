@@ -3,9 +3,7 @@ namespace App\Utils;
 
 class DataValidator {
     public static function isValidObjectArray($array, $class, $minSize = 0, $maxSize = 'unlimited')
-    //public static function validateObjectArray($minSize, $maxSize, $array, $class)
     {
-        //$minhaVariavel = MinhaClasse::class
         if(!is_array($array))                                      return false;
         if(sizeof($array) < $minSize)                              return false; 
         if($maxSize !== 'unlimited' and sizeof($array) > $maxSize) return false; 
