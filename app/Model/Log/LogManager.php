@@ -7,7 +7,7 @@ use \App\Model\Log\LogFile;
 use \App\Utils\DateTimeTool;
 use \App\Utils\DataValidator;
 
-class LogManager {
+class LogManager { 
 
     const LOG_FILES_ROUTE = __DIR__ ."\\files\\";
 

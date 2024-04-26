@@ -3,7 +3,7 @@ namespace App\Model\Log;
 
 use \Exception;
 
-class LogFile{
+class LogFile{ 
     const LOG_FILE_HEADER = 'DateTime => Severity: Code | Message;';
     private $filePath;
 
