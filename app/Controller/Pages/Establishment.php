@@ -32,7 +32,6 @@ class Establishment extends Page{
      
     }
 
-    //pode ser melhorado com assincronicidade
     private static function getEstablishment($id)
     {
         $establishmentArray = EntityEstablishment::getById($id);

@@ -13,9 +13,9 @@
         "doctrine/dbal": "^3.7"
     },
     "require-dev": {
-        "phpstan/phpstan": "^1.10"
+        "phpunit/phpunit": "^11.1"
     },
     "scripts": {
-        "phpstan": "vendor/bin/phpstan analyse app/"
+        "test": "php vendor/bin/phpunit C:\\xampp\\htdocs\\Dionise\\test"
     }
 }

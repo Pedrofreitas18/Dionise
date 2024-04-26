@@ -75,6 +75,5 @@ class Establishment{
     ); 
     
     return $establishmentArray;
-    //return count($establishmentArray) == 1 ? $establishmentArray[0] : $establishmentArray;
   }
 }
