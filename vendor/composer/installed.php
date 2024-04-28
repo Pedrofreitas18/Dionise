@@ -3,13 +3,25 @@
         'name' => 'projeto/dionise',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '084d9abf8e40d5f4c6087fd6d726c8358d4b09cf',
+        'reference' => '9dcafcd31bdf24d4680efe29ebdfc7108c0e2769',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'cordoval/hamcrest-php' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'davedevelopment/hamcrest-php' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
         'doctrine/cache' => array(
             'pretty_version' => '2.2.0',
             'version' => '2.2.0.0',
@@ -64,6 +76,36 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'hamcrest/hamcrest-php' => array(
+            'pretty_version' => 'v2.0.1',
+            'version' => '2.0.1.0',
+            'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../hamcrest/hamcrest-php',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'kodova/hamcrest-php' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'malkusch/php-mock' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'mockery/mockery' => array(
+            'pretty_version' => '1.6.11',
+            'version' => '1.6.11.0',
+            'reference' => '81a161d0b135df89951abd52296adf97deb0723d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mockery/mockery',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'mtdowling/cron-expression' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -103,6 +145,15 @@
             'reference' => '4f7fd7836c6f332bb2933569e566a0d6c4cbed74',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phar-io/version',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'php-mock/php-mock' => array(
+            'pretty_version' => '2.5.0',
+            'version' => '2.5.0.0',
+            'reference' => 'fff1a621ebe54100fa3bd852e7be57773a0c0127',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-mock/php-mock',
             'aliases' => array(),
             'dev_requirement' => true,
         ),
@@ -172,7 +223,7 @@
         'projeto/dionise' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '084d9abf8e40d5f4c6087fd6d726c8358d4b09cf',
+            'reference' => '9dcafcd31bdf24d4680efe29ebdfc7108c0e2769',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

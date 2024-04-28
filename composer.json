@@ -13,7 +13,9 @@
         "doctrine/dbal": "^3.7"
     },
     "require-dev": {
-        "phpunit/phpunit": "^11.1"
+        "mockery/mockery": "^1.6",
+        "phpunit/phpunit": "^11.1",
+        "php-mock/php-mock": "^2.5"
     },
     "scripts": {
         "test": "php vendor/bin/phpunit C:\\xampp\\htdocs\\Dionise\\test"

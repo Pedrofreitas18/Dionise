@@ -13,10 +13,9 @@ View::init([
     'URL' => URL
 ]);
 
-
 Database::config(
-    getenv('DB_USERNAME'),
-    getenv('DB_PASSWORD'),
-    getenv('DB_HOST'),
+    getenv('DB_USERNAME'), 
+    getenv('DB_PASSWORD'), 
+    getenv('DB_HOST'), 
     getenv('DB_NAME')
 );

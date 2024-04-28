@@ -31,8 +31,7 @@ class Establishment{
   
   
 //Read_________________________________________________________________________________________________________________________________________________________________
-  public static function getTodaysHighlights($idPage)
-  {
+  public static function getTodaysHighlights($idPage) {
     $idInit  = (int) ($idPage * 12) - 11;
     $idFinal = (int)  $idPage * 12;
 
@@ -40,7 +39,7 @@ class Establishment{
       "SELECT * FROM Establishment WHERE id >= :idInit AND id <= :idFinal ORDER BY ID ASC LIMIT 12", 
        array('idInit'  =>  $idInit, 'idFinal' =>  $idFinal)
     );
-    
+
     return self::stmtToEstablishments($stmt);
   }
 
