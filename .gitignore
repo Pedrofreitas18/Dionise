@@ -1,2 +1,4 @@
 *.log
 /vendor/
+/test/coverage/
+/app/Model/Log/files/

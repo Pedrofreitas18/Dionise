@@ -1,0 +1,16 @@
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.5/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="My Test Suite">
+            <directory>C:\\xampp\\htdocs\\Dionise\\test</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+             <directory suffix=".php">C:\\xampp\\htdocs\\Dionise\\app</directory>
+        </whitelist>
+    </filter>
+</phpunit>
